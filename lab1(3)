@@ -1,0 +1,112 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	float t = 0, f, c, k;
+	float k1, f1, c2, f2, c3, k3;
+
+
+	printf ("Write temperature value:\n");
+	scanf("%f",&t);
+	printf("Write temperature scale(c for celsius, k for kelvin, f for fahrenheit) or press enter for all conversions:\n");
+	getchar();
+	char s = getchar();
+
+
+
+		switch(s) {
+
+			case 'c':
+			    if (t>-273.15)
+                {
+			k = t + 273.15;
+			f = (t * 1.8) + 32;
+			printf("\n%.0f C", t);
+			printf("\n%.2f K", k);
+			printf("\n%.2f F", f);
+
+                }
+                else {
+                    printf ("Error. Unacceptable temperature value");
+                }
+                break;
+
+			case 'k':
+			    if (t>=0)
+                {
+			c = t - 273.15;
+			f = (t - 273.15)*1.8 + 32;
+			printf("\n%.0f K", t);
+			printf("\n%.2f C", c);
+			printf("\n%.2f F", f);
+
+                }
+                else {
+                    printf ("Error. Unacceptable temperature value");
+                }
+                break;
+
+
+			case 'f':
+			    if (t>-459.67)
+                {
+			c = (t - 32)*1.8;
+			k = (t - 32)*1.8 + 273.15;
+			printf("\n%.0f F", t);
+			printf("\n%.2f C", c);
+			printf("\n%.2f K", k);
+
+                }
+                else {
+                    printf ("Error. Unacceptable temperature value");
+                }
+
+                break;
+			default:
+
+      if (t>-273.15)
+       {
+	        k1 = t + 273.15;
+	        f1 = t + 273.15;
+	        printf("\n%.0f C", t);
+			printf("\n%.2f K", k1);
+			printf("\n%.2f F", f1);
+       }
+       else {
+                    printf ("\nError. Unacceptable temperature value for cel");
+                }
+
+
+                if (t>=0)
+           {
+
+			c2 = t - 273.15;
+			f2 = (t - 273.15)*1.8 + 32;
+			printf("\n%.0f K", t);
+			printf("\n%.2f C", c2);
+			printf("\n%.2f F", f2);
+           }
+			else {
+                    printf ("\nError. Unacceptable temperature value for kel");
+                }
+
+
+           if (t>-459.67)
+           {
+			c3 = (t - 32)*1.8;
+			k3 = (t - 32)*1.8 + 273.15;
+			printf("\n%.0f F", t);
+			printf("\n%.2f C", c3);
+			printf("\n%.2f K", k3);
+           }
+			else {
+                    printf ("\nError. Unacceptable temperature value for fahr");
+                }
+                break;
+		}
+
+
+
+	return 0;
+}
